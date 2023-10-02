@@ -98,7 +98,7 @@ async def private_receive_handler(c: Client, m: Message):
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        url= f"https://moneykamalo.com/st?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={stream_link}"
+        link = f"https://moneykamalo.com/st?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={stream_link}"
        
         msg_text ="""<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>\n\n<b> 🖥WATCH  :</b> <i>{}</i>\n\n<b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>"""
 
@@ -107,8 +107,8 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url= url), #Stream Link
-                                                InlineKeyboardButton('DOWNLOAD 📥', url= url) #Download Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url= link), #Stream Link
+                                                InlineKeyboardButton('DOWNLOAD 📥', url= link) #Download Link
         )
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
@@ -136,7 +136,7 @@ async def channel_receive_handler(bot, broadcast):
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        url= f"https://moneykamalo.com/st?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={stream_link}"
+        link = f"https://moneykamalo.com/st?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={stream_link}"
        
         await log_msg.reply_text(
             text=f"**Channel Name:** `{broadcast.chat.title}`\n**CHANNEL ID:** `{broadcast.chat.id}`\n**Rᴇǫᴜᴇsᴛ ᴜʀʟ:** {stream_link}",
@@ -147,8 +147,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("🖥STREAM ", url= url),
-                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url= url)] 
+                    [InlineKeyboardButton("🖥STREAM ", url= link),
+                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url= link)] 
                 ]
             )
         )
