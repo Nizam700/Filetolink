@@ -101,7 +101,7 @@ async def private_receive_handler(c: Client, m: Message):
         url= f"https://moneykamalo.com/st?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={stream_link}"
         response = requests.get(url)
             link = response.json()
-            final_links[f"{.text}"] = link['shortenedUrl']
+            final_links = link['shortenedUrl']
         movie_details["links"] = final_link
         
        
@@ -144,7 +144,7 @@ async def channel_receive_handler(bot, broadcast):
         url= f"https://moneykamalo.com/st?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={stream_link}"
         response = requests.get(url)
             link = response.json()
-            final_links[f"{.text}"] = link['shortenedUrl']
+            final_links = link['shortenedUrl']
         movie_details["links"] = final_link
         
         await log_msg.reply_text(
