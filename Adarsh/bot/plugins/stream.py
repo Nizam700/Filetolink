@@ -102,8 +102,6 @@ async def private_receive_handler(c: Client, m: Message):
         response = requests.get(url)
             link = response.json()
             final_links = link['shortenedUrl']
-        movie_details["links"] = final_link
-        
        
         msg_text ="""<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>\n\n<b> 🖥WATCH  :</b> <i>{}</i>\n\n<b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>"""
 
@@ -112,8 +110,8 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url= movie_details), #Stream Link
-                                                InlineKeyboardButton('DOWNLOAD 📥', url= movie_details)]]) #Download Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url= final_links), #Stream Link
+                                                InlineKeyboardButton('DOWNLOAD 📥', url= final_links) #Download Link
         )
     except FloodWait as e:
         print(f"Sleeping for {str(e.x)}s")
@@ -145,8 +143,7 @@ async def channel_receive_handler(bot, broadcast):
         response = requests.get(url)
             link = response.json()
             final_links = link['shortenedUrl']
-        movie_details["links"] = final_link
-        
+       
         await log_msg.reply_text(
             text=f"**Channel Name:** `{broadcast.chat.title}`\n**CHANNEL ID:** `{broadcast.chat.id}`\n**Rᴇǫᴜᴇsᴛ ᴜʀʟ:** {stream_link}",
             quote=True
@@ -156,8 +153,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("🖥STREAM ", url= movie_details),
-                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url= movie_details)] 
+                    [InlineKeyboardButton("🖥STREAM ", url= final_links),
+                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url= final_links)] 
                 ]
             )
         )
