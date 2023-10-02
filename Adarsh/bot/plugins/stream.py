@@ -144,8 +144,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("🖥STREAM ", url=stream_link),
-                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url=online_link)] 
+                    [InlineKeyboardButton("🖥STREAM ", url= f"https://moneykamalo.com/api?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={'stream_link'}"),
+                     InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ📥', url= f"https://moneykamalo.com/api?api=18af828b2c1e9f3851a61df1137a4a2cba0244e2&url={'online_link'}")] 
                 ]
             )
         )
