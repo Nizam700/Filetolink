@@ -60,7 +60,7 @@
     #mx-btn:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }  
-     .play-btn {
+      .play-btn {
  play-btn   display: inline-block;
     background-color: #0a71f7;
     padding: 10px 60px;
@@ -75,62 +75,6 @@
     background-color: #087bff;
     color: #FFFFFF;
   }
-
-  .vlc-btn {
-    display: inline-block;
-    background-color: #ff760d;
-    padding: 10px 30px;
-    border-radius: 50px;
-    color:#FFFFFF;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-    margin-right: 20px;
-  }
-
-  .vlc-btn:hover {
-    background-color: #fa7f0c;
-    color: #FFFFFF;
-  }
-
-  .download-btn {
-    display: inline-block;
-    background-color: #f50a0a;
-    padding: 10px 30px;
-    border-radius: 50px;
-    color: #FFFFFF;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .download-btn:hover {
-    background-color: #ed0707;
-  }
-  
-  .vlc.vlc-btn {
-    display: inline-block;
-    background-color: #6df70a;
-    padding: 10px 30px;
-    border-radius: 50px;
-    color: #FFFFFF;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-    margin-right: 20px;
-  }
-  .open-btn {
-  display: inline-block;
-  background-color: #DC143C;
-  padding: 10px 40px;
-  border-radius: 50px;
-  color: #FFFFFF;
-  font-weight: 500;
-  transition: all 0.3s ease-in-out;
-  margin-right: 20px;
-}
-
-.open-btn:hover {
-  background-color: #0052cc
-  color: #FFFFFF;
-}
 </style>
 
 </head>
@@ -138,12 +82,12 @@
     <!--
 YOUR ADS
     -->
-    
       <div style="margin-bottom: 5px; margin-top: 10px">Stream Options :</div>
-      
-      
+      <br>
+<center>
+  <div class="btn-container">
+    <a href="intent:%s#Intent;package=com.mxtech.videoplayer.ad;S.title=Power%20by%20@Stream_link1_bot%20;end" class="play-btn">𝗣𝗹𝗮𝘆 𝗠𝗫 𝗽𝗹𝗮𝘆𝗲𝗿</a></center><br>
       <div id="button-container1">
-      
       <button id="vlc-btn" onclick="playOnline()">
        <img src="https://i.ibb.co/GtnGhBV/videolan-vlc-logo-icon-170258.png" alt="vlc_logo" width="85px" ></button>
         </div>
@@ -152,24 +96,9 @@ YOUR ADS
             <button id="pi-btn" onclick="playOnlinepi()"><img src="https://i.ibb.co/JsDNHgz/c0C4vnAa.png" alt="playit_logo" width="120px">
             </button>
         </div>
-        <h5></h5>
-        <center>
-  <div class="btn-container">
-    <a href="intent:%s#Intent;package=com.mxtech.videoplayer.ad;S.title=Power%20by%20@Stream_link1_bot%20;end" class="play-btn">𝗣𝗹𝗮𝘆 𝗠𝗫 𝗽𝗹𝗮𝘆𝗲𝗿</a></center>
-    
-    
-    <h5></h5>
-    
-    
-
-    
-    <h6></h6>
-    
-    
         
-      <center><a href="%s" class="download-btn">𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗙𝗶𝗹𝗲𝘀</a>
-  </div>
-  
+        
+      
         <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.js"></script>
         <script>
             const player = new Plyr('#player', {
@@ -205,7 +134,7 @@ YOUR ADS
     
     function playOnlinepi() {
         const finalLinkUrl = finalUrl;
-        const piUrl = `playit://playerv2/video?url=%s`;
+        const piUrl = `playit://playerv2/video?url=%s&amp;title=`;
         window.location.href = piUrl;
     }
 
