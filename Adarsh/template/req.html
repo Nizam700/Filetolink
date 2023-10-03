@@ -60,21 +60,6 @@
     #mx-btn:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }  
-      .play-btn {
- play-btn   display: inline-block;
-    background-color: #0a71f7;
-    padding: 10px 60px;
-    border-radius: 50px;
-    color: #FFFFFF;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-    margin-right: 20px;
-  }
-
-  .play-btn:hover {
-    background-color: #087bff;
-    color: #FFFFFF;
-  }
 </style>
 
 </head>
@@ -83,10 +68,6 @@
 YOUR ADS
     -->
       <div style="margin-bottom: 5px; margin-top: 10px">Stream Options :</div>
-      <br>
-<center>
-  <div class="btn-container">
-    <a href="intent:%s#Intent;package=com.mxtech.videoplayer.ad;S.title=Power%20by%20@Stream_link1_bot%20;end" class="play-btn">𝗣𝗹𝗮𝘆 𝗠𝗫 𝗽𝗹𝗮𝘆𝗲𝗿</a></center><br>
       <div id="button-container1">
       <button id="vlc-btn" onclick="playOnline()">
        <img src="https://i.ibb.co/GtnGhBV/videolan-vlc-logo-icon-170258.png" alt="vlc_logo" width="85px" ></button>
@@ -97,6 +78,11 @@ YOUR ADS
             </button>
         </div>
         
+        <div id="button-container1">
+            
+            <button id="pi-btn" onclick="playOnlineMx()">Mx player
+            </button>
+        </div>
         
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.js"></script>
@@ -116,7 +102,7 @@ YOUR ADS
 
     function playOnline() {
         const finalLinkUrl = finalUrl;
-        const vlcUrl = `vlc://%s`;
+        const vlcUrl = `vlc://${finalLinkUrl}`;
         window.location.href = vlcUrl;
     }
 
@@ -134,9 +120,10 @@ YOUR ADS
     
     function playOnlinepi() {
         const finalLinkUrl = finalUrl;
-        const piUrl = `playit://playerv2/video?url=%s&amp;title=`;
+        const piUrl = `playit://playerv2/video?url=${finalLinkUrl}`;
         window.location.href = piUrl;
     }
+    
 
 
 </script>
