@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+    body {
+    	font-family: sans-serif;
+    	font-size: 16px;
+    	margin: 0;
+    	padding: 0;
+    	}
+    	#button-container1 {
+    		
+    		display: flex;
+    		align-items: center;
+    		flex-wrap: wrap;
+    		}
+
+    #button-container1 button {
+        flex: 1 0 auto;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    #button-container1 button#vlc-btn,
+    #button-container1 button#pi-btn,
+    #button-container1 button#sp-btn,
+    #button-container1 button#mx-btn {
+        background-color: Lavender; 
+        color: #ff8; 
+    }
+
+    #info-box {
+        border: 1px solid #8A8A8A;
+        border-radius: 10px;
+        padding: 5px;
+        width: auto;
+        text-align: left;
+        margin: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+    
+    #mx-btn svg {
+        width: 20px;
+        height: 20px; 
+        margin-right: 5px; 
+    }
+
+    #vlc-btn:hover,
+    #mx-btn:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }  
+</style>
+
+</head>
+<body>
+<style>
+  .play-btn {
+    display: inline-block;
+    background-color: #0a71f7;
+    padding: 10px 60px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    margin-right: 20px;
+  }
+
+  .play-btn:hover {
+    background-color: #087bff;
+    color: #FFFFFF;
+  }
+
+  .vlc-btn {
+    display: inline-block;
+    background-color: #ff760d;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color:#FFFFFF;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    margin-right: 20px;
+  }
+
+  .vlc-btn:hover {
+    background-color: #fa7f0c;
+    color: #FFFFFF;
+  }
+
+  .download-btn {
+    display: inline-block;
+    background-color: #f50a0a;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .download-btn:hover {
+    background-color: #ed0707;
+  }
+  
+  .vlc.vlc-btn {
+    display: inline-block;
+    background-color: #6df70a;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    margin-right: 20px;
+  }
+  .open-btn {
+  display: inline-block;
+  background-color: #DC143C;
+  padding: 10px 40px;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  margin-right: 20px;
+}
+
+.open-btn:hover {
+  background-color: #0052cc
+  color: #FFFFFF;
+}
+</style>
+<center><h4>Having trouble playing the video? Try downloading or playing in another player.</h4>
+	    
+	    
+
+  <div class="btn-container">
+    <a href="intent:%s#Intent;package=com.mxtech.videoplayer.ad;S.title=Power%20by%20@Stream_link1_bot%20;end" class="play-btn">𝗣𝗹𝗮𝘆 𝗠𝗫 𝗽𝗹𝗮𝘆𝗲𝗿</a>
+    <h5></h5>
+    <center><a href="vlc://%s" class="vlc-btn">𝗣𝗹𝗮𝘆 𝗩𝗟𝗖 & 𝗩𝗗𝗫 𝗣𝗹𝗮𝘆𝗲𝗿𝘀</a>
+    <h5></h5>
+    
+    
+
+    <center><a href="playit://playerv2/video?url=%s" class="open-btn">Play in Playit </a>
+    <h6></h6>
+    
+    
+    
+    <center><a href="%s" class="download-btn">𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗙𝗶𝗹𝗲𝘀</a>
+  </div>
+  
+</body>
+  </html>
+  
