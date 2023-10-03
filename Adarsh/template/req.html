@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+    body {
+    	font-family: sans-serif;
+    	font-size: 16px;
+    	margin: 0;
+    	padding: 0;
+    	}
+    	#button-container1 {
+    		
+    		display: flex;
+    		align-items: center;
+    		flex-wrap: wrap;
+    		}
+
+    #button-container1 button {
+        flex: 1 0 auto;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    #button-container1 button#vlc-btn,
+    #button-container1 button#pi-btn,
+    #button-container1 button#sp-btn,
+    #button-container1 button#mx-btn {
+        background-color: Lavender; 
+        color: #ff8; 
+    }
+
+    #info-box {
+        border: 1px solid #8A8A8A;
+        border-radius: 10px;
+        padding: 5px;
+        width: auto;
+        text-align: left;
+        margin: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+    
+    #mx-btn svg {
+        width: 20px;
+        height: 20px; 
+        margin-right: 5px; 
+    }
+
+    #vlc-btn:hover,
+    #mx-btn:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }  
+</style>
+
+</head>
+<body>
+    <!--
+YOUR ADS
+    -->
+    <div class="playercontainerbox"> 
+    <div id="player-container">
+    <video id="player" playsinline controls>
+    <source src="%s" type="video/mp4"></video>
+    </div>
+    </div>
+    <div class="containerbox"> 
+    <div id="info-box">
+    <p style="font-size: 16px; color:#7b89a3;">
+        🎥Title : 
+    </p><p style="font-size: 13px; color:#7b89a3;">
+           ⏰Duration :  
+     </p><p style="font-size: 13px; color:#7b89a3;">
+           🗃️Size : 
+    </p><p style="font-size: 13px; color:#7b89a3;">
+           🗓️Release :
+     </p>
+     </div>
+      <div style="margin-bottom: 5px; margin-top: 10px">Stream Options :</div>
+      <div id="button-container1">
+      <button id="vlc-btn" onclick="playOnline()">
+       <img src="https://i.ibb.co/GtnGhBV/videolan-vlc-logo-icon-170258.png" alt="vlc_logo" width="85px" ></button>
+        </div>
+        <div id="button-container1">
+            
+            <button id="pi-btn" onclick="playOnlinepi()"><img src="https://i.ibb.co/JsDNHgz/c0C4vnAa.png" alt="playit_logo" width="120px">
+            </button>
+        </div>
+        
+        
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.js"></script>
+        <script>
+            const player = new Plyr('#player', {
+                controls: ['play', 'progress', 'rewind', 'fast-forward', 'current-time', 'fullscreen', 'settings']
+            });
+        </script>
+        </div>    
+        <div>
+        
+        
+<script>
+    
+    const currentUrl = window.location.href;
+    const finalUrl = currentUrl.replace("/watch/", "/");
+
+    function playOnline() {
+        const finalLinkUrl = finalUrl;
+        const vlcUrl = `vlc://%s`;
+        window.location.href = vlcUrl;
+    }
+
+    function playOnlineMx() {
+        const finalLinkUrl = finalUrl;
+        const mxUrl = `intent:${finalLinkUrl}#Intent;package=com.mxtech.videoplayer.ad;S.title={{file_name}};end`;
+        window.location.href = mxUrl;
+    }
+    
+    function playOnlinesp() {
+        const finalLinkUrl = finalUrl;
+        const spUrl = `intent:${finalLinkUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+        window.location.href = spUrl;
+    }
+    
+    function playOnlinepi() {
+        const finalLinkUrl = finalUrl;
+        const piUrl = `playit://playerv2/video?url=%s`;
+        window.location.href = piUrl;
+    }
+
+
+</script>
+<!--
+      YOUR ADS 
+      -->
+</body>
+  </html>
+  
