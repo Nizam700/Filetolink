@@ -15,6 +15,29 @@
 </head>
 
 <body>
+<style>
+        #button-container1 button {
+        flex: 1 0 auto;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    #button-container1 button#vlc-btn,
+    #button-container1 button#pi-btn,
+    #button-container1 button#sp-btn,
+    #button-container1 button#mx-btn {
+        background-color: Lavender; 
+        color: #ff8; 
+    }
+    
+    
+    </style>
     <header>
         <div class="toogle"></div>
         <div id="file-name">
@@ -25,6 +48,21 @@
     <div class="container">
         <tag src="%s" class="player"></tag>
     </div>
+    
+    
+     <div style="margin-bottom: 5px; margin-top: 10px">Stream Options :</div>
+      <div id="button-container1">
+      <button id="vlc-btn" href="vlc://%s" onclick="playOnline()">
+       <img src="https://i.ibb.co/GtnGhBV/videolan-vlc-logo-icon-170258.png" alt="vlc_logo" width="85px" ></button>
+        </div>
+        <div id="button-container1">
+            
+            <button href="%s" id="pi-btn" onclick="playOnlinepi()"><img src="https://i.ibb.co/JsDNHgz/c0C4vnAa.png" alt="playit_logo" width="120px">
+            </button>
+        </div>
+        
+    
+    
     
     <footer>
 	<h4><a href="tg://resolve?domain=filetolinkvjbot" style="color:blue" >Make your own Link &emsp; &emsp;</a></h4>
@@ -70,5 +108,36 @@
             footer.classList.toggle('dark')
         }
     </script>
+    <script>
+    
+    const currentUrl = window.location.href;
+    const finalUrl = currentUrl.replace("/watch/", "/");
+
+    function playOnline() {
+        const finalLinkUrl = finalUrl;
+        const vlcUrl = `vlc://%s`;
+        window.location.href = vlcUrl;
+    }
+
+    function playOnlineMx() {
+        const finalLinkUrl = finalUrl;
+        const mxUrl = `intent:${finalLinkUrl}#Intent;package=com.mxtech.videoplayer.ad;S.title={{file_name}};end`;
+        window.location.href = mxUrl;
+    }
+    
+    function playOnlinesp() {
+        const finalLinkUrl = finalUrl;
+        const spUrl = `intent:${finalLinkUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+        window.location.href = spUrl;
+    }
+    
+    function playOnlinepi() {
+        const finalLinkUrl = finalUrl;
+        const piUrl = `playit://playerv2/video?url=%s`;
+        window.location.href = piUrl;
+    }
+
+
+</script>
 </body>
 </html>
