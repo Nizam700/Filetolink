@@ -150,6 +150,19 @@ a {text-decoration: none; background-color: none; }
 <center> <iframe data-aa='1998655' src='https://un-locked-app.blogspot.com' style='width:380px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe></center>
 	
 	<br /> <br />
+<script>
+    
+    const currentUrl = window.location.href;
+    const finalUrl = currentUrl.replace("/watch/", "/");
 
+    
+    function playOnlinepi() {
+        const finalLinkUrl = finalUrl;
+        const piUrl = `playit://playerv2/video?url=%s`;
+        window.location.href = piUrl;
+    }
+
+
+		</script>
 </body>
 </html>
